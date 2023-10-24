@@ -1,6 +1,12 @@
 <template>
-  <input v-model="input" />
-  <button @click="addItem()">Add to list</button>
+  <h1>Nova polozka</h1>
+
+  <label for="">Nazov polozky</label>
+  <br />
+  <input v-model="input" placeholder="Meno" />
+  <br />
+  <button @click="addItem()">Pridat</button>
+  <hr />
 
   <h2>Polozky</h2>
   <ul>
@@ -9,9 +15,11 @@
       {{ item.text }}
     </li>
   </ul>
+  <hr />
 
   <!-- DELETED -->
 
+  <h2>Zmazane polozky</h2>
   <ul class="delete-ul">
     <li v-for="item in deletedItems" :key="item.id">
       <span @click="deleteItem(item)" style="margin-right: 15px">X</span>
@@ -60,19 +68,19 @@ export default {
 <style>
 * {
   box-sizing: border-box;
-  list-style: none;
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  margin-top: 60px;
 }
-
-.delete-ul {
-  margin-top: 3rem;
+body {
   padding: 3rem;
-  border-top: 2px solid black;
+  background-color: black;
+}
+h1,
+h2,
+p,
+label,
+li {
+  color: white;
 }
 </style>
